@@ -133,7 +133,7 @@ const Index = () => {
   const estimatedDuration = calculateEstimatedDuration();
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background flex flex-col">
       {/* Header */}
       <header className="border-b border-border bg-card">
         <div className="container mx-auto px-4 py-6">
@@ -180,7 +180,7 @@ const Index = () => {
       </header>
 
       {/* Main Content */}
-      <main className="container mx-auto px-4 py-8">
+      <main className="container mx-auto px-4 py-8 flex-grow">
         {isGenerating && (
           <Card className="mb-8 p-6">
             <div className="space-y-3">
@@ -225,6 +225,33 @@ const Index = () => {
           </div>
         </div>
       </main>
+
+      {/* Footer */}
+      <footer className="border-t border-border bg-card mt-16">
+        <div className="container mx-auto px-4 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-center md:text-left text-muted-foreground text-sm">
+            Created by Aitor Sánchez Gutiérrez
+          </p>
+          <div className="flex items-center gap-6 text-sm">
+            <a 
+              href="https://aitorsanchez.pages.dev/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Blog
+            </a>
+            <a 
+              href="https://aitorhub.vercel.app/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Más apps
+            </a>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
